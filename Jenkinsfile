@@ -23,6 +23,7 @@ pipeline {
         
         stage('Push to Dockerhub') {
             steps{
+                withCredentials([usernameColonPassword(credentialsId: 'dockerhub_credentials', variable: 'dockerhub_credentials')])
                 sh 'docker push wordsmith-api:latest'
             }
         }
