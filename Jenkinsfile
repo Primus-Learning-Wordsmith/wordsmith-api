@@ -23,7 +23,7 @@ pipeline {
         
         stage('Push to Dockerhub') {
             steps{
-                sh 'docker push grace414/wordsmith-api:latest'
+                sh 'docker push wordsmith-api:latest'
             }
         }
     }
