@@ -17,7 +17,7 @@ pipeline {
             steps{
                 script{
                     sh 'docker build -t wordsmith-api:latest .'
-                    sh 'docker tag wordsmith-api:latest grace414/wordsmith-api:latest
+                    sh 'docker tag wordsmith-api:latest grace414/wordsmith-api:latest'
                 }
             }
         }
