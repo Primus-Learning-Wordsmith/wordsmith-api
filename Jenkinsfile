@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     withCredentials([usernameColonPassword(credentialsId: 'dockerhub_credentials', variable: 'dockerhub_credentials')]) {
-                    sh 'docker push wordsmith-api:latest'
+                    sh 'docker push wordsmith-api grace414/wordsmith-api:latest'
                     }
                 }
             }
