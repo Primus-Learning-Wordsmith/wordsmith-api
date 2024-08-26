@@ -17,6 +17,7 @@ pipeline {
             steps{
                 script{
                     sh 'docker build -t wordsmith-api:latest .'
+                    sh 'docker tag wordsmith-api:latest grace414/wordsmith-api:latest
                 }
             }
         }
@@ -25,7 +26,7 @@ pipeline {
             steps {
                 script {
                     withCredentials([usernameColonPassword(credentialsId: 'dockerhub_credentials', variable: 'dockerhub_credentials')]) {
-                    sh 'docker push wordsmith-api grace414/wordsmith-api:latest'
+                    sh 'docker push grace414/wordsmith-api:latest'
                     }
                 }
             }
